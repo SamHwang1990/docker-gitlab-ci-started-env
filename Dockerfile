@@ -6,5 +6,7 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 
 USER node
 
-RUN npm install -g tslint typescript \
-    && npm install -g gulp-cli
+RUN RUN apk update && apk upgrade && \
+    apk add --no-cache git && \
+    npm install -g tslint typescript && \
+    npm install -g gulp-cli
