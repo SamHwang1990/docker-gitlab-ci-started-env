@@ -7,7 +7,7 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 USER root
 
 RUN apk update && apk upgrade && \
-    apk add --no-cache git && \
+    apk add --no-cache git
 
 USER node
 
