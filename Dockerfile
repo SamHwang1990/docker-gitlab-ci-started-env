@@ -4,9 +4,12 @@ FROM node:10-alpine
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
 
-USER node
+USER root
 
 RUN apk update && apk upgrade && \
     apk add --no-cache git && \
-    npm install -g tslint typescript && \
+
+USER node
+
+RUN npm install -g tslint typescript && \
     npm install -g gulp-cli
